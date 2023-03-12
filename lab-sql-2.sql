@@ -43,8 +43,17 @@ lower(email)
 FROM sakila.customer;
 
 SELECT
+	*
+FROM sakila.customer;
+
+SELECT
+	CONCAT(UPPER(SUBSTRING(first_name,1,1)), LOWER(SUBSTRING(first_name,2))," ", upper(last_name),"-",lower(email)) as formated_name
+FROM sakila.customer;
+
+SELECT
+	title,
 	length(title)
 FROM sakila.film
-ORDER BY title ASC
+ORDER BY length(title) DESC
 LIMIT 1;
 
