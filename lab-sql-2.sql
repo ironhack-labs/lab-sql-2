@@ -16,7 +16,7 @@ select count(rental_id) from rental;
 
 -- What is the shortest and longest rental period?
 -- shortest
-select rental_duration 
+select rental_duration as shortest_rental
 from film
 order by rental_duration asc
 limit 1;
@@ -47,14 +47,18 @@ select avg(length)
 from film;
 
 -- What's the average movie duration expressed in format (hours, minutes)?
-select avg(time(length)) 
+select avg(length)
 from film;
 
--- How many movies longer than 3 hours? ----- not correct!!!
+select time_format((convert(time, avg(length),'hh:mi') from bank.loan;
+
+SELECT EXTRACT( from CAST(date as date)) AS day from loan;
+
+
+-- How many movies longer than 3 hours? ---- - not correct!!!
 select count(length)
 from film
-where length>180;
-
+where length > '180';
 
 
 -- Get the name and email formatted. Example: Mary SMITH - mary.smith@sakilacustomer.org.
