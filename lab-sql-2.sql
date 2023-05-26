@@ -46,7 +46,7 @@ from film;
 select avg(length)
 from film;
 
--- What's the average movie duration expressed in format (hours, minutes)?
+--8. What's the average movie duration expressed in format (hours, minutes)?---- not able to output in the required format
 select avg(length)
 from film;
 
