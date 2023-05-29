@@ -46,16 +46,25 @@ from film;
 select avg(length)
 from film;
 
---8. What's the average movie duration expressed in format (hours, minutes)?---- not able to output in the required format
+-- What's the average movie duration expressed in format (hours, minutes)?
 select avg(length)
 from film;
 
-select time_format((convert(time, avg(length),'hh:mi') from bank.loan;
+select sec_to_time(AVG(film.length)*60) AS avg_duration
+FROM film;
+-- esta função lê qualquer número como segundos e o transforma em formato de tempo, então, como nosso dado era em minutos, 
+#precisamos primeiro multiplicar por 60, pra transformar em segundos
 
-SELECT EXTRACT( from CAST(date as date)) AS day from loan;
+select CONCAT(FLOOR(AVG(film.length)/60) AS avg_duration
+from film;
+-- aqui, a função floor() arredonda a divisão pra baixo 'h'
 
+select ROUND(AVG(film.length)%60) as avg_duration
+from film; -- e aqui, os minutos restantes podem ser arredondados pra qualquer lado
 
--- How many movies longer than 3 hours? ---- - not correct!!!
+-- acho que ta faltando algo; ainda vou pesquisar melhor essas funções;
+
+-- How many movies longer than 3 hours? 
 select count(length)
 from film
 where length > '180';
